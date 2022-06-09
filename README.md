@@ -1,4 +1,4 @@
-To see projects copy and paste links below.
+To see projects copy one of the links below and paste in browser.
 
 Kenenyah.github.io/(FoodDelivery)/
 
