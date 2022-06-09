@@ -27,19 +27,30 @@ h2, h5, h6, a, button {
 }
 
 .panel {
-  width: 90%;
   width: 350px;
-  height: 630px;
+  height: 650px;
   background-color: #fff;
-  margin: 70px auto;
+  margin: 70px 0;
   box-shadow: 0px 40px 40px -20px #3C7B61;
   border-radius: 5px;
   position: relative;
 }
 
-.panel-center{
+.panel.left {
+  margin-right: -20px;
+}
+
+.panel.right {
+  margin-left: -20px;
+}
+
+.panel.left, .panel.right {
+  height: 600px;
+}
+
+.panel.center {
     z-index: 9;
-    width: 380px;
+    width: 370px;
 }
 
 #close-button {
@@ -54,14 +65,16 @@ h2, h5, h6, a, button {
   box-sizing: border-box;
   padding: 55px 45px;
 }
-.inner-container>img {
-    width: 50%;
+
+.inner-container > img {
+  width: 50%;  
 }
 
 .inner-container > h2 {
   margin: 20px 0 10px;
   font-weight: 600;
   font-size: 22px;
+  height: 60px;
 }
 
 .inner-container > p {
@@ -107,34 +120,33 @@ h2, h5, h6, a, button {
   width: 100%;
   padding: 15px 0;
   color: white;
-  background-color: #BDBDBD;
   border: none;
   font-weight: 700;
   font-size: 15px;
   border-radius: 5px;
   transition: .3s ease all;
 }
-.ready-btn {
-  background-color: #46A67E;
+
+#ready-btn {
+  background: #46A67E;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   box-shadow: 0px 20px 20px rgba(103, 189, 153, 0.2);
 }
 
-.all-btn:hover {
+#ready-btn:hover {
   opacity: .8;
   transition: .3s ease all;
   cursor: pointer;
 }
 
-.inactive{
-    background: #BDBDBD;
-    box-shadow: 0px 20px 20px rgba(167, 167, 167, 0.2);
-    position: absolute;
-    bottom: 22%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75%;
-
+.inactive-btn {
+  background: #BDBDBD;
+  box-shadow: 0px 20px 20px rgba(167, 167, 167, 0.2);
+  position: absolute;
+  bottom: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
 }
 
 .dots-ctr {
@@ -158,33 +170,13 @@ h2, h5, h6, a, button {
   background-color: #67BD99;
 }
 
-.panel-left,.panel-right{
-    display: none;
+.right, .left {
+  display: none;
 }
 
-@media only screen and (min-width:992px) {
-    
-    .panel-left,.panel-right{
-        display: block;
-    }
-
-    .panel-left,.panel-right{
-        width: 90%;
-        width: 350px;
-        height: 600px;
-        background-color: #fff;
-        margin: 70px 0;
-        box-shadow: 0px 40px 40px -20px #3C7B61;
-        border-radius: 5px;
-        z-index: 1;
-        position: relative;
-      }
-
-      .panel-left{
-          margin-right: -20px;
-      }
-
-      .panel-right{
-          margin-left: -20px;
-      }
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .right, .left {
+    display: block;
+  }
 }
