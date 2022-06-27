@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Selector</title>
+    <style>
+        body {
+            width: 80%;
+            height: 80vh;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 40%;
+            margin: 0 auto;
+            border-radius: 3px;
+            margin-top: 60px;
+            padding-bottom: 10px;
+        }
+
+        .next-button {
+            margin: 10px auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .next-button>button {
+            border: none;
+            margin: 10px;
+            background-color: rgb(3, 167, 3);
+            color: white;
+            height: 40px;
+            width: 90px;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+
+        .next-button>button:hover {
+            cursor: pointer;
+            background-color: rgba(3, 167, 3, 0.623);
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .choice {
+            width: 100%;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin: 5px 0;
+        }
+
+        .choice>label {
+            margin-left: 10px;
+        }
+
+        .option {
+            margin-right: 10px;
+        }
+
+        .score {
+            font-size: 35px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="load()">
+    <h1>Shopify Quiz</h1>
+
+    <h2 id="question-num"></h2>
+    <h3 id="question"></h3>
+
+    <div id="score" class="score hide"></div>
+
+    <div id="container" class="container">
+        <div class="choice">
+            <input class="option" type="radio" id="lbl1" name="shopify-quiz" value="" required>
+            <label for="lbl1" id="txt1">HTML</label><br>
+        </div>
+        <div class="choice">
+            <input class="option" type="radio" id="lbl2" name="shopify-quiz" value="">
+            <label for="lbl2" id="txt2">HTML</label><br>
+        </div>
+        <div class="choice">
+            <input class="option" type="radio" id="lbl3" name="shopify-quiz" value="">
+            <label for="lbl3" id="txt3">HTML</label><br>
+        </div>
+        <div class="choice">
+            <input class="option" type="radio" id="lbl4" name="shopify-quiz" value="">
+            <label for="lbl4" id="txt4">HTML</label><br>
+        </div>
+    </div>
+    <div class="next-button">
+        <button id="previous" class="hide">Previous</button>
+        <button id="next">Next</button>
+        <button id="submit" type="submit" class="hide">Submit</button>
+    </div>
+
+    <script>
+        const questions = [{
+                question: 'Which of the following is not a real eCommerce platform?',
+                answers: [{
+                        option: 'Shopify',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'WooCommerce',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'ShopCommerce ',
+                        answer: 'correct'
+                    },
+                    {
+                        option: 'BigCommerce',
+                        answer: 'incorrect'
+                    },
+                ]
+            },
+            {
+                question: 'If Shopify is so good, why are Shopify developers necessary?',
+                answers: [{
+                        option: 'To save time on things like store setups and migrations',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'To extend the limited design options and functionalities of themes with custom code',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'To provide support with a deep understanding of how the platform works and what its limitations are ',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'All the above',
+                        answer: 'correct'
+                    },
+                ]
+            },
+            {
+                question: 'Which of the following is true about Shopify developers?',
+                answers: [{
+                        option: 'They are paid extremely well',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'There is a high demand for them',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'They need to know web development, the platform itself, and the liquid template language ',
+                        answer: 'incorrect'
+                    },
+                    {
+                        option: 'All the above',
+                        answer: 'correct'
+                    },
+                ]
+            }
+        ];
+        let currentQuestion = document.getElementById('question');
+        let qNum = document.getElementById('question-num');
+        let lbl1 = document.getElementById('lbl1');
+        let lbl2 = document.getElementById('lbl2');
+        let lbl3 = document.getElementById('lbl3');
+        let lbl4 = document.getElementById('lbl4');
+
+        let txt1 = document.getElementById('txt1');
+        let txt2 = document.getElementById('txt2');
+        let txt3 = document.getElementById('txt3');
+        let txt4 = document.getElementById('txt4');
+        let i = 0;
+
+
+
+
+        function load() {
+            question.innerHTML = `${questions[i].question}`;
+            qNum.innerHTML = `Question ${i+1} of ${questions.length}:`;
+
+            lbl1.setAttribute('value', `${questions[i].answers[0].answer}`);
+            lbl2.setAttribute('value', `${questions[i].answers[1].answer}`);
+            lbl3.setAttribute('value', `${questions[i].answers[2].answer}`);
+            lbl4.setAttribute('value', `${questions[i].answers[3].answer}`);
+
+            txt1.innerHTML = questions[i].answers[0].option;
+            txt2.innerHTML = questions[i].answers[1].option;
+            txt3.innerHTML = questions[i].answers[2].option;
+            txt4.innerHTML = questions[i].answers[3].option;
+
+            // questions.forEach(q => {
+            //     q.answers.forEach(element => {
+            //         console.log(element.option)
+            //     });
+            // });
+        }
+
+        let score = 0;
+        let trys = 0;
+
+        let prev = document.getElementById('previous');
+        let button = document.getElementById('next');
+        let submit = document.getElementById('submit');
+
+        prev.addEventListener(('click'), function back() {
+            if(i===1){
+                prev.classList.add('hide');
+            }
+            i--;
+            submit.classList.add('hide');
+            button.classList.remove('hide');
+
+            currentQuestion.innerHTML = questions[i].question;
+            qNum.innerHTML = `Question ${i+1} of ${questions.length}:`;
+
+            lbl1.setAttribute('value', `${questions[i].answers[0].answer}`);
+            lbl2.setAttribute('value', `${questions[i].answers[1].answer}`);
+            lbl3.setAttribute('value', `${questions[i].answers[2].answer}`);
+            lbl4.setAttribute('value', `${questions[i].answers[3].answer}`);
+
+            txt1.innerHTML = questions[i].answers[0].option;
+            txt2.innerHTML = questions[i].answers[1].option;
+            txt3.innerHTML = questions[i].answers[2].option;
+            txt4.innerHTML = questions[i].answers[3].option;
+        });
+        button.addEventListener(('click'), function next() {
+            trys++;
+            if (lbl1.checked || lbl2.checked || lbl3.checked || lbl4.checked) {
+                if (lbl1.checked === true && lbl1.value === 'correct') {
+                    score++;
+                } else if (lbl2.checked === true && lbl2.value === 'correct') {
+                    score++;
+                } else if (lbl3.checked === true && lbl3.value === 'correct') {
+                    score++;
+                } else if (lbl4.checked === true && lbl4.value === 'correct') {
+                    score++;
+                }
+                // console.log(score);
+                lbl1.checked = false;
+                lbl2.checked = false;
+                lbl3.checked = false;
+                lbl4.checked = false;
+                prev.classList.remove('hide');
+
+                if (i === questions.length - 1) {
+                    return false;
+                }
+                i++;
+
+                currentQuestion.innerHTML = questions[i].question;
+                qNum.innerHTML = `Question ${i+1} of ${questions.length}:`;
+
+                lbl1.setAttribute('value', `${questions[i].answers[0].answer}`);
+                lbl2.setAttribute('value', `${questions[i].answers[1].answer}`);
+                lbl3.setAttribute('value', `${questions[i].answers[2].answer}`);
+                lbl4.setAttribute('value', `${questions[i].answers[3].answer}`);
+
+                txt1.innerHTML = questions[i].answers[0].option;
+                txt2.innerHTML = questions[i].answers[1].option;
+                txt3.innerHTML = questions[i].answers[2].option;
+                txt4.innerHTML = questions[i].answers[3].option;
+
+                if (i === 2) {
+                    button.classList.add('hide');
+                    submit.classList.remove('hide');
+                }
+            } else {
+                alert('You must choose an answer!');
+            }
+        });
+
+        submit.addEventListener(('click'), function sub() {
+            trys++;
+            if (lbl1.checked || lbl2.checked || lbl3.checked || lbl4.checked) {
+                if (lbl1.checked === true && lbl1.value === 'correct') {
+                    score++;
+                } else if (lbl2.checked === true && lbl2.value === 'correct') {
+                    score++;
+                } else if (lbl3.checked === true && lbl3.value === 'correct') {
+                    score++;
+                } else if (lbl4.checked === true && lbl4.value === 'correct') {
+                    score++;
+                }
+                // console.log(score);
+
+            document.getElementById('container').innerHTML = '';
+            document.querySelector('h1').innerHTML = '';
+            document.querySelector('h2').innerHTML = '';
+            document.querySelector('h3').innerHTML = '';
+            let scoreText = document.getElementById('score');
+            scoreText.classList.remove('hide');
+            scoreText.innerHTML = `Score is ${score}/${trys}`;
+
+            submit.classList.add('hide');
+            prev.classList.add('hide');
+        } else {
+                alert('You must choose an answer!');
+            }
+        });
+    </script>
+</body>
+
+</html>
