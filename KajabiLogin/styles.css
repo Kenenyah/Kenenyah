@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+}
+body {
+  display: flex;
+  background-color: #f1f1f1;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  width: 220px;
+  height: 400px;
+  background-color: white;
+}
+.content-container {
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+.top-container {
+  text-align: center;
+}
+.logo {
+  width: 40%;
+}
+.top-container > img {
+  margin-bottom: 25px;
+}
+.top-container > p {
+  font-size: 10px;
+  margin: 10px 0;
+}
+.top-container a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+input[type="password"], input[type="email"] {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 8px;
+  width: 100%;
+  padding: 5px;
+}
+.check-ctr {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.check-ctr > input {
+  transform: scale(0.6);
+  margin-right: 3px;
+}
+input[type="submit"] {
+  width: 100%;
+  background-color: cornflowerblue;
+  border-radius: 3px;
+  border: none;
+  padding: 6px 0;
+  font-size: 8px;
+  color: white;
+}
+.pw-forgot {
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+}
+.pw-forgot > a {
+  text-decoration: none;
+  color: grey;
+  font-size: 10px;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (min-width: 500px) {
+  .container {
+    box-shadow: 5px 3px 20px -3px #999999;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .container {
+    width: 440px;
+    display: flex;
+  }
+  .content-container {
+      width: 50%;
+      height: 100%;
+  }
+  .image-container {
+      width: 50%;
+      height: 100%;
+      background: bottom / 100% url('https://assets.codepen.io/6060109/worker.jpg');
+  }
+}

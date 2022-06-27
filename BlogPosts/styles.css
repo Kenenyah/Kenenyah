@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    min-width: 100%;
+    min-height: 100%;
+    height: 100vh;
+    background-color: rgb(236, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    margin: auto;
+    width: 300px;
+    height: 500px;
+    background-color: white;
+  }
+
+  .content-container{
+    padding: 20px 30px;
+    box-sizing: border-box;
+  }
+  .top-container{
+    text-align: center;
+  }
+  .logo{
+    width: 40%;
+  }
+  .top-container>img{
+    margin-bottom: 35px;
+  }
+  .top-container>h3{
+    margin-bottom: 15px;
+  }
+  .top-container>p{
+    font-size: 15px;
+    margin: 15px 0;
+  }
+  .top-container>p>a{
+    text-decoration: none;
+    color: rgb(70, 177, 248);
+  }
+  input[type="password"],  input[type="email"]{
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .check-ctr{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin: 15px 0 20px;
+  }
+  .check-ctr>input{
+    margin-right: 3px;
+    transform: scale(.95);
+  }
+  input[type="submit"]{
+    width: 100%;
+    background-color: rgb(68, 154, 253);
+    border-radius: 3px;
+    border: none;
+    padding: 6px 0;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  .pw-forgot{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: darkgrey;
+    font-size: 15px;
+  }
+
+  @media screen and (min-width:500px){
+    .container{
+      box-shadow: 5px 3px 20px -3px #999999;
+      height: 420px;
+    }
+  }
+  @media screen and (min-width:750px){
+    .container {
+      width: 600px;
+      display: flex;
+    }
+    .content-container {
+        width: 50%;
+        height: 100%;
+    }
+    .image-container {
+        width: 50%;
+        height: 100%;
+        background: bottom / cover url('https://assets.codepen.io/6060109/worker.jpg');
+        display:flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .billboard-content{
+      color: white;
+      margin: 25px;
+    }
+    .billboard-title{
+      font-size: 20px;
+      margin: 15px 0;
+    }
+    .billboard-text{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      font-family:"Ubuntu";
+    }
+  }
