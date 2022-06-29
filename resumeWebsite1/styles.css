@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: #f1f1f1;
+}
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+ul > li {
+    padding: 5px 0;
+}
+ul > li::before {
+    content: '➡️';
+    padding-right: 3px;
+}
+.card-container {
+    width: 80%;
+    max-width: 350px;
+    margin: 20px auto;
+    background-color: cornflowerblue;
+    border-radius: 4px;
+}
+.hero-image {
+    height: 200px;
+    background-image: url('https://assets.codepen.io/6060109/girl.jpg');
+    background-size: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.name-title {
+    padding: 20px 10px;
+    color: white;
+}
+.name {
+    margin-bottom: 5px;
+}
+.title {
+    font-size: 10px;
+}
+.section {
+    background-color: white;
+    padding: 20px 10px;
+    border-bottom: 1px solid lightgrey;
+}
+.section:last-of-type {
+    border-bottom: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.section-title {
+    border-bottom: 2px solid cornflowerblue;
+    display: inline-block;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.body-text {
+    color: grey;
+    padding-top: 10px;
+    font-size: 10px;
+}
+.body-text > p {
+    padding: 10px 0;
+}

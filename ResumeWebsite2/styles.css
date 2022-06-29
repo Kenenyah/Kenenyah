@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap');
+* {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+html,body{
+    height: 110%;
+    width: 100%;
+}
+
+body {
+    background-color: #C7E3F2;
+}
+
+.card{
+    width: 90%;
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+.section{
+    padding: 40px 30px 30px;
+    color: white;
+    text-align: left;
+}
+
+.section > img{
+    width: 150px;
+    border-radius: 100%;
+}
+.section > h1{
+    margin: 15px;
+    color: rgb(56, 56, 56);
+    font-weight: 400;
+}
+.section > h4{
+    font-size: 20px;
+    font-weight: 400;
+    color: #777;
+}
+.section > h5{
+    font-size: 18px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.30);
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.section > p{
+    font-weight: 200;
+    font-size: 16px;
+    padding-bottom: 20px;
+    line-height: 25px;
+}
+
+.section > ul {
+    padding-left: 0;
+}
+.section > ul > li {
+    font-weight: 200;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+ul > li::before {
+    content: '✔';
+    margin-right: 10px;
+}
+
+.section1{
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    margin: 25px 0;
+}
+.section2{
+    background-color: #4399FF;
+}
+
+.section a{
+color: white;
+font-weight: 300;
+}
+.section a:hover{
+color: white;
+opacity: .8;
+cursor: pointer;
+}
+
+.section3{
+    background-color: #348aec;
+}
+.section4{
+    background-color: #287DE3;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+}
+
+.links{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.social{
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+@media only screen and (min-width: 740px) {
+    .card{
+        max-width: 600px;
+        margin: 10% auto;
+    }
+    .section2{
+        display: flex;
+        align-items: center;
+    }
+    .section3{
+        display: flex;
+    }
+    .section4{
+        display: flex;
+    }
+    .section > h5{
+        border-bottom: none;
+        width: 30%;
+        text-align: right;
+        padding-right: 40px;
+        border-right: 1px solid rgba(255, 255, 255, 0.30);
+    }
+    .section > p,.section>ul,.section>div{
+        width: 70%;
+        padding-left: 40px;
+    }
+
+}
