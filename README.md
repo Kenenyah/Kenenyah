@@ -13,3 +13,7 @@ Kenenyah.github.io/InstagramLogin
 Kenenyah.github.io/KajabiLogin
 
 Kenenyah.github.io/BlogPosts
+
+Kenenyah.github.io/resumeWebsite1
+
+Kenenyah.github.io/ResumeWebsite2
