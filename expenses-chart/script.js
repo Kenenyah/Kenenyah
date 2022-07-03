@@ -6,9 +6,6 @@ const main = async()=>{
        
     console.log(days)
 
-
-
-
 // ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
 
 const labels = [];
