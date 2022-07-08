@@ -1,0 +1,254 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    width: 100%;
+}
+
+#icon-color {
+    fill: rgb(40, 203, 253);
+ }
+#grey-icon-color {
+    fill: rgb(116, 116, 116);
+ }
+
+ .container{
+    max-width: 450px;
+    height: 100%;
+    margin: 10px auto;
+    border: 1px solid #dadada;
+ }
+ #container{
+    max-width: 450px;
+    margin: 10px auto;
+    border: 1px solid #dadada;
+ }
+.user-header{
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+}
+.user-name{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.verified{
+    width: 25px;
+}
+
+h2{
+    font-size: 20px;
+}
+h4{
+    font-size: 14px;
+    margin-right: 20px;
+}
+h5{
+    color: rgb(116, 116, 116);
+    display: flex;
+    align-items: flex-end;
+}
+
+h2,h5{
+    margin: 2px 0;
+}
+
+.header-img>img{
+    width: 100%;
+    height: 200px;
+}
+
+.profile-details-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-picture>img{
+    margin-top: -50px;
+    margin-left: 10px;
+    border: 3px solid white;
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+}
+.button>button{
+    margin: 10px 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 800;
+    border: none;
+    color: white;
+    background-color: rgb(40, 203, 253);
+}
+
+.calendar{
+    width: 19px;
+}
+
+.date{
+    margin: 10px 0;
+}
+
+.profile-details{
+margin: 0 10px;
+}
+
+.followers{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.followers span{
+    color: rgb(116, 116, 116);
+    font-weight: 500;
+}
+
+.profile-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.profile-content a{
+    text-decoration: none;
+    color: rgb(116, 116, 116);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.active{
+
+    border-bottom: 3px solid rgb(40, 203, 253);
+
+}
+
+.profile-content a:hover{
+    color: rgb(40, 203, 253);
+    border-bottom: 3px solid rgb(40, 203, 253);
+}
+
+.tweets{
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.tweet-text{
+    margin: 15px;
+    margin-left: 0;
+}
+
+
+.small-profile-picture>img{
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+.more{
+    position: absolute;
+    right: 4%;
+    top: 5%;
+    font-size: 25px;
+    color: rgb(116, 116, 116);
+}
+
+p{
+    margin: 0;
+}
+
+p>span{
+    color: rgb(116, 116, 116);
+    font-weight: 500;
+}
+
+.tweet-stats{
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.stats-container{
+    margin: auto;
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
+.tweet-stats span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+
+.tweet-stats svg{
+    width: 20px;
+    height: 20px;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 20px;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(40, 203, 253);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 110%;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgb(40, 203, 253);
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  a{
+    text-decoration: none;
+  }
+  a>h2{
+    color: black;
+  }
